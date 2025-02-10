@@ -19,6 +19,14 @@ After reversing the data it becomes information.
 + **Linear data structure** when all the elements are arranged in a linear order like **array,  Queue, Stack or linked list.
 + **Non linear data structure** when all the elements are not arranged in a linear order like the **Tree** and the **Graph**.
 
+## Time Complexity
 ### The ideal data structure
 Efficiently data structure is always measured in term of **TIME** and **Space**.  
 The **Ideal** data structure is the one that takes the least possible time for all its operations and consume the least memory space.  
+
+Let's focus on the **Time Complexity**  
+The comparison of the time complexity of the data structures based on the operations performed on them,  measuring the actual running time is not practical at all.  
+#### The running time depends on the **size of inputs**
+
+Let's take an example where we have a table of 1000 integer and we want to add a new number to the beginning of the array, we have to make 1000 shift to the left to have a place to the new number, so that's cause **1000  units of time**.  
+If the size of the input is n, then **f(n)** is a function indicate the **time complexity**,  it represents the number of instructions executed for the input value n.
