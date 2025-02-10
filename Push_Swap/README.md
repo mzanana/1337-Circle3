@@ -14,3 +14,11 @@ Example :
 After reversing the data it becomes information.
 
 **Data Structure** gives us the way to struct the data to appropriately manage it so it can be an information and used **efficiently**.
+
+### Types of data structures
++ **Linear data structure** when all the elements are arranged in a linear order like **array,  Queue, Stack or linked list.
++ **Non linear data structure** when all the elements are not arranged in a linear order like the **Tree** and the **Graph**.
+
+### The ideal data structure
+Efficiently data structure is always measured in term of **TIME** and **Space**.  
+The **Ideal** data structure is the one that takes the least possible time for all its operations and consume the least memory space.  
