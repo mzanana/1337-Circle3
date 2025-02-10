@@ -49,3 +49,20 @@ We notice from the graph of the function that for **larger** value of `n`, the s
 So the approximate time complexity is **`f(n) = 5n^2`** 
 ### Big O notation 
 Big O notation is used to measure the performance of any algorithm by providing the order of growth of the function, it helps us finding the **growth rate** of the function without plugging in different values of N.  
+
+If f(n) and g(n) are two functions, then :  
+**f(n) = O(g(n))**  
+If there exists constants c and a such that 
+**f(n) <= c.g(n) , for all n > a**
+
+Example :  
+<p align = "center">
+	<img src = "https://i.imgur.com/XWO3VaK.png" width = "500">
+</p>
+
+Big O notation eliminates all the unnecessary terms from the function which are not contributing much in the overall running time
+
+<p align = "center">
+	<img src = "https://i.imgur.com/Tb6bqht.jpeg" width = "500">
+</p>
+
