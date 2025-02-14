@@ -75,3 +75,10 @@ A **structure** is a user defined data type that can be used to group elements o
 **why not using arrays ?**  
 Arrays also can be used to store a group of elements, but with the **same** type!   
 
+**Syntax of a structure**   
+<p align = "center">
+	<img src = "https://i.imgur.com/kab0yPt.png" width = "350">
+</p>
+ 
++ `s_car` is the struct tag and used to identify a particular kind of struct, without `typedef` we need to declare our variable using : `struct s_car car1, car2, ... ;`   
++ `typedef` gives the user the ability to edit any type name, for example `typedef int INTEGER` so from now on we can declare a variable using `INTEGER x;` in our case to not declare our variable `struct s_car car1;` we can declare it just using `t_car car1;`  
