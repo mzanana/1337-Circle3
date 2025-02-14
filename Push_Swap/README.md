@@ -82,3 +82,42 @@ Arrays also can be used to store a group of elements, but with the **same** type
  
 + `s_car` is the struct tag and used to identify a particular kind of struct, without `typedef` we need to declare our variable using : `struct s_car car1, car2, ... ;`   
 + `typedef` gives the user the ability to edit any type name, for example `typedef int INTEGER` so from now on we can declare a variable using `INTEGER x;` in our case to not declare our variable `struct s_car car1;` we can declare it just using `t_car car1;`  
+
+ **Access the members** using dot `.`  
+
+```C
+typedef struct s_test
+{
+	int       x;
+	char      *str;
+}t_test;
+
+int main()
+{
+	t_test t1, t2;
+
+	t1.x = 14;
+	t2.str = "Hello world";
+	
+}
+```
+
+ **Access the members** of a struct pointer using dot `->`  
+ ```C
+typedef struct s_test
+{
+	int       x;
+	char      *str;
+}t_test;
+
+int main()
+{
+	t_test t1 = {25, "Hello world"};
+	t_test *pt1;
+
+	pt1 = &t1;
+	printf(" %d ", pt1->x);
+	// the output in our case is : 25
+}```
+
+`pt1->x` is equivalent to `(\*pt1).x` which is `(\*&t1).x` that refers to `t1.x`  that equal 25.
