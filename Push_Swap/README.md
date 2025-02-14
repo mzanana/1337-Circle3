@@ -66,3 +66,12 @@ Big O notation eliminates all the unnecessary terms from the function which are 
 	<img src = "https://i.imgur.com/Tb6bqht.jpeg" width = "500">
 </p>
 
+### Structures 
+We have to get data for a cars as engine, fuel_type, seating_cap ...   
+as you notice that the data here had different types. We need to have 10 variable of char * for engine, 10 others for the fuel type, 10 other integer data type for the seating cap ... This is just waste of the memory and having a long code.   
+#### Why not having one data type that contain the whole information of the car.
+
+A **structure** is a user defined data type that can be used to group elements of different types into a single type.  
+**why not using arrays ?**  
+Arrays also can be used to store a group of elements, but with the **same** type!   
+
