@@ -102,7 +102,7 @@ int main()
 }
 ```
 
- **Access the members** of a struct pointer using dot `->`  
+ **Access the members** of a struct pointer using array sign  `->`  
  ```C
 typedef struct s_test
 {
@@ -118,6 +118,7 @@ int main()
 	pt1 = &t1;
 	printf(" %d ", pt1->x);
 	// the output in our case is : 25
-}```
+}
+```
 
 `pt1->x` is equivalent to `(\*pt1).x` which is `(\*&t1).x` that refers to `t1.x`  that equal 25.
