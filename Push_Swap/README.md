@@ -121,4 +121,4 @@ int main()
 }
 ```
 
-`pt1->x` is equivalent to `(\*pt1).x` which is `(\*&t1).x` that refers to `t1.x`  that equal 25.
+`pt1->x` is equivalent to `(*pt1).x` which is `(*&t1).x` that refers to `t1.x`  that equal 25.
