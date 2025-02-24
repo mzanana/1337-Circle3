@@ -146,7 +146,7 @@ A single linked list is a list made up of nodes that consist of two parts :  **d
 **why not using arrays ?**  
 Arrays also can be used to store a group of elements, but we can store just the data with the **same** data type, also the table is stored in consecutive memory allocation.  
 
-#### Create the node of a single linked list
+### Create the node of a single linked list
 
 ```C
 #include<stdlib.h>
@@ -168,3 +168,46 @@ int main()
 }
 ```
 
+### Create the simple linked list
+
+Let's create exactly the linked list shown on this picture  
+<p align = "center">
+	<img src = "https://i.ibb.co/h1yKSPdR/image.png" width = "500">
+</p>
+
+```C
+#include<stdlib.h>
+
+struct node
+{
+	char data;
+	struct node *link;
+};
+
+int main ()
+{
+	struct node *head, *current;
+
+	head = malloc(sizeof(struct node));
+	head->data = 'A';
+	head->link = NULL;
+
+	current = malloc(sizeof node);
+	current->data = 'B';
+	current->link = NULL;
+
+	head->link = current;
+	
+	current = malloc(sizeof node);
+	current->data = 'C';
+	current->link = NULL;
+
+	head->link->link = current;
+
+	current = malloc(sizeof node);
+	current->data = 'D';
+	current->link = NULL;
+
+	head->next->next->next = current;
+}
+``` 
