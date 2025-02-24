@@ -145,3 +145,26 @@ struct self
 A single linked list is a list made up of nodes that consist of two parts :  **data** and **link** as a pointer to the next  
 **why not using arrays ?**  
 Arrays also can be used to store a group of elements, but we can store just the data with the **same** data type, also the table is stored in consecutive memory allocation.  
+
+#### Create the node of a single linked list
+
+```C
+#include<stdlib.h>
+
+struct node
+{
+	int data;
+	struct node link;
+};
+
+int main()
+{
+	struct node *head;
+
+	head = NULL;
+	head = malloc (sizeof(struct node));
+	head->data = 30;
+	head->link = NULL;
+}
+```
+
