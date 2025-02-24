@@ -154,7 +154,7 @@ Arrays also can be used to store a group of elements, but we can store just the 
 struct node
 {
 	int data;
-	struct node link;
+	struct node *next;
 };
 
 int main()
@@ -164,7 +164,7 @@ int main()
 	head = NULL;
 	head = malloc (sizeof(struct node));
 	head->data = 30;
-	head->link = NULL;
+	head->next = NULL;
 }
 ```
 
@@ -181,7 +181,7 @@ Let's create exactly the linked list shown on this picture
 struct node
 {
 	char data;
-	struct node *link;
+	struct node *next;
 };
 
 int main ()
@@ -190,23 +190,23 @@ int main ()
 
 	head = malloc(sizeof(struct node));
 	head->data = 'A';
-	head->link = NULL;
+	head->next = NULL;
 
 	current = malloc(sizeof node);
 	current->data = 'B';
-	current->link = NULL;
+	current->next = NULL;
 
-	head->link = current;
+	head->next = current;
 	
 	current = malloc(sizeof node);
 	current->data = 'C';
-	current->link = NULL;
+	current->next = NULL;
 
-	head->link->link = current;
+	head->next->next = current;
 
 	current = malloc(sizeof node);
 	current->data = 'D';
-	current->link = NULL;
+	current->next = NULL;
 
 	head->next->next->next = current;
 }
