@@ -6,7 +6,7 @@
 
 # Data Structures
 
-### When the **Data** becomes **Information**
+#### When the **Data** becomes **Information**
 The data is just a collection of characters, but after processing it, it becames an information.  
 Example :  
 + Data => ananazm si eman ym
@@ -15,7 +15,7 @@ After reversing the data it becomes information.
 
 **Data Structure** gives us the way to struct the data to appropriately manage it so it can be an information and used **efficiently**.
 
-### Types of data structures
+## Types of data structures
 + **Linear data structure** when all the elements are arranged in a linear order like **array,  Queue, Stack or linked list.** 
 + **Non linear data structure** when all the elements are not arranged in a linear order like the **Tree** or the **Graph**.
 <p align = "center">
@@ -66,14 +66,12 @@ Big O notation eliminates all the unnecessary terms from the function which are 
 	<img src = "https://i.imgur.com/Tb6bqht.jpeg" width = "500">
 </p>
 
-### Structures 
+## Structures 
 We have to get data for a cars as engine, fuel_type, seating_cap ...   
 as you notice that the data here had different types. We need to have 10 variable of char * for engine, 10 others for the fuel type, 10 other integer data type for the seating cap ... This is just waste of the memory and having a long code.   
 #### Why not having one data type that contain the whole information of the car.
 
 A **structure** is a user defined data type that can be used to group elements of different types into a single type.  
-**why not using arrays ?**  
-Arrays also can be used to store a group of elements, but with the **same** type!   
 
 **Syntax of a structure**   
 <p align = "center">
@@ -110,15 +108,40 @@ typedef struct s_test
 	char      *str;
 }t_test;
 
+void print(t_test *ptr)
+{
+	printf(" %d %s", ptr->x, ptr->str);
+}
+
 int main()
 {
 	t_test t1 = {25, "Hello world"};
-	t_test *pt1;
-
-	pt1 = &t1;
-	printf(" %d ", pt1->x);
+	
+	printf(&t1);
 	// the output in our case is : 25
 }
 ```
 
 `pt1->x` is equivalent to `(*pt1).x` which is `(*&t1).x` that refers to `t1.x`  that equal 25.
+
+# Linked List
+
+#### Self referential structures 
+They are those structures that contain at least one pointer to the the same type of the structure   
+```c
+struct self
+{
+	int p;
+	struct self *ptr;
+};
+```
+
+## Single Linked List
+
+<p align = "center">
+	<img src = "https://i.ibb.co/h1yKSPdR/image.png" width = "500">
+</p>
+
+A single linked list is a list made up of nodes that consist of two parts :  **data** and **link** as a pointer to the next  
+**why not using arrays ?**  
+Arrays also can be used to store a group of elements, but we can store just the data with the **same** data type, also the table is stored in consecutive memory allocation.  
