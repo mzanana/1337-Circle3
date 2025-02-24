@@ -212,4 +212,26 @@ int main ()
 }
 ``` 
 
-### Traversing a linked list
+### Traversing and Counting a linked list
+
+Traversing the linked list means we gonna pass by each node until we reach the null pointer.  
+Our job is to calculate the total number of nodes :  
+```C
+int    ft_lstcnt(struct node *list)
+{
+	int i;
+	struct node *cnt;
+
+	if (list == NULL)
+		return (0);
+	cnt = list;
+	i = 0;
+	while(cnt)
+	{
+		i++;
+		cnt = cnt.next;
+	}
+	
+	return (i);
+}
+```
