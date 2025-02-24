@@ -211,3 +211,5 @@ int main ()
 	head->next->next->next = current;
 }
 ``` 
+
+### Traversing a linked list
