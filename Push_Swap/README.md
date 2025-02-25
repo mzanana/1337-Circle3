@@ -323,3 +323,19 @@ void add_exact(struct node **list, struct node *new, int pos)
 	prev->next = new;
 }
 ```
+
+### Delete the first node
+
+```C
+void delete_first(struct node **list)
+{
+	struct node *temp;
+
+	if (!*list)
+		return ;
+	temp = *list;
+	*list = (*list)->next;
+	free(temp);
+	temp = NULL;
+}
+```
