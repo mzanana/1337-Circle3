@@ -7,7 +7,7 @@
 # Data Structures
 
 #### When the **Data** becomes **Information**
-The data is just a collection of characters, but after processing it, it becames an information.  
+The data is just a collection of characters, but after processing it, it becomes an information.  
 Example :  
 + Data => ananazm si eman ym
 + Information =>  my name is mzanana
@@ -235,3 +235,43 @@ int    ft_lstcnt(struct node *list)
 	return (i);
 }
 ```
+
+### Printing the data
+
+```C
+void    ft_lstprint(struct node *list)
+{
+	struct node *current;
+
+	if (list == NULL)
+		return ;
+	current = list;
+	while(current)
+	{
+		printf("%c ", current->data);
+		current = current.next;
+	}
+}
+```
+
+### Insert a node at the end of the linked list
+
+```C
+void add_end(struct node **list, struct node *new)
+{
+	struct node *temp;
+
+	if (!*list)
+	{
+		*list = new;
+		new->next = NULL;
+		return ;	
+	}
+	temp = *list;
+	while (temp->next)
+		temp = temp->next;
+	temp->next = new;
+	new->next = NULL;
+}
+```
+
