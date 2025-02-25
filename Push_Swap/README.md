@@ -275,3 +275,18 @@ void add_end(struct node **list, struct node *new)
 }
 ```
 
+### Insert at the beginning of the linked list
+
+```C
+void add_beginning(struct node **list, struct node *new)
+{
+	if (!*list)
+	{
+		*list = new;
+		new->next = NULL;
+		return ;	
+	}
+	new->next = *list;
+	*list = new;
+}
+```
