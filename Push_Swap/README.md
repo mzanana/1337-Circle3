@@ -290,3 +290,36 @@ void add_beginning(struct node **list, struct node *new)
 	*list = new;
 }
 ```
+
+### Insert node at certain position
+
+```C
+void add_exact(struct node **list, struct node *new, int pos)
+{
+	struct node *temp;
+	struct node *prev;
+	int len;
+	int i;
+	
+	temp = *list;
+	prev = *list;
+	len = ft_lstcnt(temp);
+	if (pos > len || pos < 0)
+		return ;
+	if (pos == 0)
+	{
+		new->next = *list;
+		*list = new;
+		return ;
+	}
+	i = 0;
+	while (i < pos)
+	{
+		prev = temp;
+		temp = temp->next;
+		i++;
+	}
+	new->next = temp;
+	prev->next = new;
+}
+```
