@@ -402,3 +402,19 @@ void delete_exact(struct node **list, int pos)
 	free(temp);
 }
 ```
+
+### Delete the entire list
+
+```C
+void delete_entire(struct node **list)
+{
+	struct node *temp;
+	
+	while (*list)
+	{
+		temp = *list;
+		*list = (*list)->next;
+		free(temp);
+	}
+}
+```
