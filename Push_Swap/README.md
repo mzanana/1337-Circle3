@@ -304,15 +304,15 @@ void add_exact(struct node **list, struct node *new, int pos)
 	temp = *list;
 	prev = *list;
 	len = ft_lstcnt(temp);
-	if (pos > len || pos < 0)
+	if (pos > len || pos <= 0)
 		return ;
-	if (pos == 0)
+	if (pos == 1)
 	{
 		new->next = *list;
 		*list = new;
 		return ;
 	}
-	i = 0;
+	i = 1;
 	while (i < pos)
 	{
 		prev = temp;
@@ -337,5 +337,68 @@ void delete_first(struct node **list)
 	*list = (*list)->next;
 	free(temp);
 	temp = NULL;
+}
+```
+
+### Delete the last node
+
+```C
+void delete_last(struct node **list)
+{
+	struct node *temp;
+	struct node *prev;
+
+	temp = *list;
+	prev = NULL;
+
+	if (!*list)
+		return ;
+	if (!(*list)->next)
+	{
+		free(temp);
+		return ;
+	}
+	while (temp->next)
+	{
+		prev = temp;
+		temp = temp->next;
+	}
+	prev->next = NULL;
+	free (temp);
+}
+```
+
+### Delete node at particular position 
+
+```C
+void delete_exact(struct node **list, int pos)
+{
+	struct node *temp;
+	struct node *prev;
+	int i;
+	int len;
+
+	if (!*list)
+		return ;
+	temp = *list;
+	len = ft_lstcnt(temp);
+	if (pos > len || pos <= 0)
+		return ;
+	if (pos == 1)
+	{
+		*list = temp->next;
+		free(temp);
+		return ;
+	}
+	i = 1;
+	prev = NULL;
+	while (i < pos)
+	{
+		prev = temp;
+		temp = temp->next;
+		i++;
+	}
+	prev->next = temp->next;
+	free(temp);
 }
 ```
