@@ -448,3 +448,9 @@ void rev_list(struct node **list)
 }
 ```
 
+
+## Doubly linked list
+
+A linked list that it's structure contain the an extra pointer that point to the previous node  
+![doubly linked list example](https://i.imgur.com/FWS8SH3.png)  
+
