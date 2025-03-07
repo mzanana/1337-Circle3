@@ -418,3 +418,33 @@ void delete_entire(struct node **list)
 	}
 }
 ```
+
+
+### Reverse a Single Linked List
+
+```C
+struct node
+{
+	char data;
+	struct node *next;
+};
+
+void rev_list(struct node **list)
+{
+	struct node *prev;
+	struct node *adv;
+
+	prev = NULL;
+	adv = *list;
+
+	while (*list)
+	{
+		adv = (*list)->next;
+		(*list)->next = prev;
+		prev = *list;
+		*list = adv;
+	}
+	*list = prev;
+}
+```
+
