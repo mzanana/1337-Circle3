@@ -464,3 +464,29 @@ typedef struct s_node
 	struct s_node *next;
 }t_node;
 ```
+
+### Insertion at the beginning
+
+```C
+void insert_beg(t_struct **head, t_struct *new)
+{
+	new->next = *head;
+	(*head)->prev = new;
+	*head = new;
+}
+```
+
+### Inserting at the end
+
+```C
+void insert_end(t_struct **head, t_struct *new)
+{
+	t_struct *curr;
+
+	curr = *head;
+	while (curr->next)
+		curr = curr->next;
+	curr->next = new;
+	new->prev = curr;
+}
+```
