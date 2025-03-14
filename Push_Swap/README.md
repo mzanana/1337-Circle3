@@ -490,3 +490,50 @@ void insert_end(t_struct **head, t_struct *new)
 	new->prev = curr;
 }
 ```
+
+### Insert at certain position
+
+```C
+void insert_pos(t_struct **head, t_struct *new, int pos)
+{
+	t_struct *curr;
+	t_struct *pre;
+	
+	int       i;
+	int       len;
+
+	curr = *head;
+	pre = *head;
+	len = ft_len(curr);
+	if (!new)
+		return ;
+	if (!(*head) && pos == 0)
+	{
+		insert_beg(*head, new);
+		return ;
+	}
+	if (pos > len || pos <= 0)
+		return ;
+	if (pos == 1)
+	{
+		new->next = *head;
+		(*head)->previous = new;
+		*head = new;
+		return ;
+	}
+	i = 1;
+	while (i < pos)
+	{
+		pre = curr;
+		curr = curr->next;
+		i++;
+	}
+	if (curr)
+		curr->prev = new;
+	new->next = curr;
+	new->prev = pre;
+	pre->next = new;	
+}
+```
+
+
