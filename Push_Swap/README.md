@@ -451,6 +451,16 @@ void rev_list(struct node **list)
 
 ## Doubly linked list
 
-A linked list that it's structure contain the an extra pointer that point to the previous node  
+A linked list that it's structure contain the an extra pointer that point to the previous node 
+
 ![doubly linked list example](https://i.imgur.com/FWS8SH3.png)  
 
+### The struct of a doubly linked list
+```C
+typedef struct s_node
+{
+	struct s_node *prev;
+	void          *data;
+	struct s_node *next;
+}t_node;
+```
