@@ -585,6 +585,28 @@ void ft_del_pos(t_struct **head, int pos)
 {
 	int i;
 	int len;
-	t_struct *prev;
+	t_struct *curr;
+	t_struct *pre;
+
+	if (!head || !(*head))
+		return ;
+	curr = *head;
+	pre = NULL;
+	len = ft_len(curr);
+	if (pos > len || pos <= 0)
+		return ;
+	if (pos == 1)
+		ft_delete_first(head);
+	i = 1;
+	while (i < pos)
+	{
+		pre = curr;
+		curr = curr->next;
+		i++;
+	}
+	if (curr->next)
+		curr->next->prev = pre;
+	pre->next = curr->next;
+	free (curr);
 }
 ```
