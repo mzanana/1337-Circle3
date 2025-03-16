@@ -537,3 +537,22 @@ void insert_pos(t_struct **head, t_struct *new, int pos)
 ```
 
 
+### Delete the first node
+
+```C
+#include <stdlib.h>
+void ft_delete_first(t_struct **head)
+{
+	t_struct *temp;
+	
+	if (!head || !(*head))
+		return ;
+	temp = *head;
+	*head = (*head)->next;
+	if (*head)
+		(*head)->prev = NULL;
+	free (temp);
+}
+```
+
+
