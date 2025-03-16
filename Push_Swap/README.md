@@ -610,3 +610,29 @@ void ft_del_pos(t_struct **head, int pos)
 	free (curr);
 }
 ```
+
+
+
+### Reverse Doubly Linked list
+
+```C
+void ft_reverse_dl(t_struct **head)
+{
+	t_struct *curr;
+	t_struct *temp;
+
+	if (!head || !(*head))
+		return ;
+	curr = *head;
+	while (curr)
+	{
+		temp = curr->prev;
+		curr->prev = curr->next;
+		curr->next = temp;
+		curr = curr->prev;
+	}
+	if (temp)
+		*head = temp->prev;
+}
+```
+
