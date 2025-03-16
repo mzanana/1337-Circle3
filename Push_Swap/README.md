@@ -536,7 +536,6 @@ void insert_pos(t_struct **head, t_struct *new, int pos)
 }
 ```
 
-
 ### Delete the first node
 
 ```C
@@ -556,3 +555,36 @@ void ft_delete_first(t_struct **head)
 ```
 
 
+### Delete the last node
+
+```C
+void ft_delete_last(t_struct **head)
+{
+	t_struct *curr;
+
+	if (!head || !(*head))
+		return ;
+	curr = *head;
+	if (!(curr->next))
+	{
+		free (curr);
+		*head = NULL;
+		return ;
+	}
+	while (curr->next)
+		curr = curr->next;
+	curr->prev->next = NULL;
+	free (curr);
+}
+```
+
+
+### Delete at certain position
+```C
+void ft_del_pos(t_struct **head, int pos)
+{
+	int i;
+	int len;
+	t_struct *prev;
+}
+```
