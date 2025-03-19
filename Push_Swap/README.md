@@ -648,6 +648,7 @@ A stack is a linear data structure in which insertions and deletions are allowed
 <p align = "center">
 	<img src = "https://camo.githubusercontent.com/659ac001d63cacb67b690095f3c3ee4663ef7184d7738356fc091baa5b1533f5/68747470733a2f2f692e696d6775722e636f6d2f41724e546267442e706e67" width = "550">
 </p>
+
 + Any object can be **accessed** only from the top.  
 + Any object can be **added** only at the top.
 
