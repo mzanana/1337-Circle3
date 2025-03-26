@@ -652,7 +652,7 @@ A stack is a linear data structure in which insertions and deletions are allowed
 + Any object can be **accessed** only from the top.  
 + Any object can be **added** only at the top.
 
-### Stack as an **ADT**  
+### Swap
 
-**ADT** ?  
-Abstract Data Types are like user defined data types which defines operations on values using functions without specifying what is there inside the function and how the operations are performed.  
+Swap top two numbers in a Stack 
+
