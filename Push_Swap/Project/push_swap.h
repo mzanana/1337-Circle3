@@ -6,18 +6,22 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 04:02:49 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/20 04:28:33 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/03/26 00:45:01 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+// Libraries
+#include <stdio.h>
+
+// Struct of the stack
 typedef struct s_stack
 {
     int data;
     struct s_stack *next;
-}t_stack;
+} t_stack;
 
 // operations_1 : sa, sb, ss, pa, pb.
 void    sa(t_stack **st);
@@ -29,4 +33,5 @@ void    pb(t_stack **st1, t_stack **st2);
 // operations_2 : ra, rb, rr.
 
 // operations_3 : rra, rrb, rrr.
+
 #endif
