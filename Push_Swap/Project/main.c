@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 04:02:43 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/22 00:54:43 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/03/26 03:30:20 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,10 @@ int main(int ac, char **av)
         return (0);
     stb = NULL;
     sta = ft_parsing(av, ac);
+    if (!sta)
+    {
+        //freeing ...;
+        return 1;
+    }
+    
 }
