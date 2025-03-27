@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 04:02:49 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/26 00:45:01 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/03/27 01:22:41 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define PUSH_SWAP_H
 
 // Libraries
-#include <stdio.h>
+#include <stdio.h> // NULL
+#include <stdlib.h> // malloc
 
 // Struct of the stack
 typedef struct s_stack
@@ -33,5 +34,14 @@ void    pb(t_stack **st1, t_stack **st2);
 // operations_2 : ra, rb, rr.
 
 // operations_3 : rra, rrb, rrr.
+
+// helpers
+
+// ----> Split
+char    **ft_split(char *str);
+void    jump_spaces(char *str, int *i);
+void    free_split(char **str, int i);
+int     ft_stringlen(char *str, int start);
+int     ft_countword(char *str);
 
 #endif
