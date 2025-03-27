@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 04:02:49 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/27 01:43:12 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/03/27 03:43:03 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 // Libraries
 #include <stdio.h> // NULL
 #include <stdlib.h> // malloc
+#include <limits.h> // int_max int_min
 
 // Struct of the stack
 typedef struct s_stack
@@ -36,12 +37,14 @@ void    pb(t_stack **st1, t_stack **st2);
 // operations_3 : rra, rrb, rrr.
 
 // helpers
-
-// ----> Split
 char    **ft_split(char *str);
 void    jump_spaces(char *str, int *i);
 void    free_split(char **str);
 int     ft_stringlen(char *str, int start);
 int     ft_countword(char *str);
+
+void ft_error(char **str, t_stack *st);
+void ft_putstr(char *str);
+int ft_strlen(char *str);
 
 #endif
