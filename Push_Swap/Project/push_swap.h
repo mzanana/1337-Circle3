@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 04:02:49 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/27 01:22:41 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/03/27 01:43:12 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void    pb(t_stack **st1, t_stack **st2);
 // ----> Split
 char    **ft_split(char *str);
 void    jump_spaces(char *str, int *i);
-void    free_split(char **str, int i);
+void    free_split(char **str);
 int     ft_stringlen(char *str, int start);
 int     ft_countword(char *str);
 
