@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 01:17:24 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/27 01:27:25 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/03/27 01:43:05 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,13 @@ int ft_stringlen(char *str, int start)
 	return ret;
 }
 
-void free_split(char **str, int i)
+void free_split(char **str)
 {
-	while (i--)
-		free(str[i]);
+    int i;
+
+    i = 0;
+	while (str[i])
+		free(str[i++]);
 	free(str);
 }
 
@@ -88,7 +91,7 @@ char **ft_split(char *str)
 	{
 		ret[j] = malloc(sizeof(char) * (ft_stringlen(str, i) + 1));
 		if (!ret[j])
-			return (free_split(ret, j), NULL);
+			return (free_split(ret), NULL);
 		k = 0;
 		while (str[i] && str[i] != ' ')
 			ret[j][k++] = str[i++];
