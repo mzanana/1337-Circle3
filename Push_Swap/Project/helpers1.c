@@ -6,11 +6,21 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 02:45:05 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/27 03:35:57 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/03/27 22:02:22 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void ft_putstr(char *str)
+{
+    int len;
+
+    if (!str)
+        return ;
+    len = ft_strlen(str);
+    write(1, str, len);
+}
 
 int ft_strlen(char *str)
 {
@@ -22,25 +32,6 @@ int ft_strlen(char *str)
     while (str[i])
         i++;
     return i;
-}
-
-void ft_putstr(char *str)
-{
-    int len;
-
-    if (!str)
-        return ;
-    len = ft_strlen(str);
-    write(1, str, len);
-}
-void ft_error(char **str, t_stack *st)
-{
-    ft_putstr("Error\n");
-    if (str)
-        free_split(str);
-    if (st)
-        free_stack(st);
-    exit (1);
 }
 
 int	check_number(char *str)
@@ -59,4 +50,15 @@ int	check_number(char *str)
 		i++;
 	}
 	return 1;
+}
+
+int	num_duplicate(t_stack *stack, int num)
+{
+	while (stack)
+	{
+		if (stack->data == num)
+			return 1;
+		stack = stack->next;
+	}
+	return 0;
 }
