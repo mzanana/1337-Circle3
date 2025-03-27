@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 04:02:49 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/27 22:03:03 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/03/27 22:36:28 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ t_stack*    ft_parsing(char **av, int ac);
 int         ft_atoi(char *str, char **split, t_stack *stack);
 int         is_valid(char *str);
 int         is_num(char c);
-void        ft_error(char **str, t_stack *st);
+void        ft_error(char **str, t_stack **st);
 //ft_split.c
 char**      ft_split(char *str);
 void        jump_spaces(char *str, int *i);
@@ -53,4 +53,7 @@ void        ft_putstr(char *str);
 int         ft_strlen(char *str);
 int         num_duplicate(t_stack *stack, int num);
 int         check_number(char *str);
+// ft_linkedlist.c
+void	lst_addback(t_stack **head, int num);
+void	free_stack(t_stack **head);
 #endif
