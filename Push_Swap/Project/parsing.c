@@ -6,11 +6,21 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 21:23:24 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/27 03:44:27 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/03/27 19:55:39 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void ft_error(char **str, t_stack *st)
+{
+    ft_putstr("Error\n");
+    if (str)
+        free_split(str);
+    if (st)
+        free_stack(st);
+    exit (1);
+}
 
 int	is_num(char c)
 {
@@ -60,7 +70,7 @@ int ft_atoi(char *str, char **split, t_stack *stack)
 		ft_error(split, stack);
 	return ((int)(ret * sign));
 }
-t_stack *ft_parsing(char **av, int ac)
+t_stack	*ft_parsing(char **av, int ac)
 {
 	t_stack *stack;
 	char 	**split;
@@ -76,11 +86,14 @@ t_stack *ft_parsing(char **av, int ac)
 		j = 0;
 		while (split[j])
 		{
-			if (!check_number(split[j]))
-				return (ft_error(split, stack), NULL);
 			num = ft_atoi(split[j], split, stack);
-			
+			if (!check_number(split[j]) || num_duplicate(stack, num))
+				ft_error(split, stack);
+			lst_addback(&stack, num);
+			j++;
 		}
+		free_split(split);
+		i++;
 	}
-	
+	return (stack);
 }
