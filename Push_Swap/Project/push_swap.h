@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 04:02:49 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/27 22:36:28 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/03/28 00:47:14 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <stdio.h> // NULL
 #include <stdlib.h> // malloc
 #include <limits.h> // int_max int_min
+#include <unistd.h> // write
 
 // Struct of the stack
 typedef struct s_stack
