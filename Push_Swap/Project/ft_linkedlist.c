@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 19:56:47 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/27 21:51:23 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/03/28 00:40:55 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,19 @@ void	lst_addback(t_stack **head, int num)
 	while (tmp->next)
 		tmp = tmp->next;	
 	tmp->next = new;
+}
+
+void	free_stack(t_stack **head)
+{
+	t_stack	*tmp;
+
+	if (!head)
+		return ;
+	tmp = *head;
+	while ((*head))
+	{
+		tmp = (*head)->next;
+		free((*head));
+		(*head) = tmp;
+	}
 }
