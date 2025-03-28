@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 04:02:43 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/28 00:54:46 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/03/28 02:04:54 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,5 @@ int main(int ac, char **av)
     {
         ft_error(NULL, NULL);
         return 1;
-    }
-    while (sta)
-    {
-        printf("%d  ", sta->data);
-        sta = sta->next;
-    }
-  
+    }  
 }
