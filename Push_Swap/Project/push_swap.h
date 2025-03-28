@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 04:02:49 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/28 03:24:59 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/03/28 20:45:31 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,12 @@ typedef struct s_stack
 // operations_1 : sa, sb, ss, pa, pb.
 void    sa(t_stack **stack);
 void    sb(t_stack **stack);
-void    ss(t_stack **sta, t_stack **stb);
+void	ss(t_stack **sta, t_stack **stb);
 void    pa(t_stack **sta, t_stack **stb);
 void    pb(t_stack **sta, t_stack **stb);
 
 // operations_2 : ra, rb, rr.
+void	ft_swap(t_stack **stack);
 
 // operations_3 : rra, rrb, rrr.
 
@@ -57,4 +58,5 @@ int         check_number(char *str);
 // ft_linkedlist.c
 void	lst_addback(t_stack **head, int num);
 void	free_stack(t_stack **head);
+int     lst_size(t_stack *stack);
 #endif
