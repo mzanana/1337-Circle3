@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 16:41:40 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/28 23:34:12 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/03/28 23:53:44 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,21 @@ void	ft_rotate(t_stack **stack)
 	current->next = holder;
 	holder->next = NULL;
 }
+void	ft_reverse_rot(t_stack **stack)
+{
+	t_stack *tmp;
+	t_stack *prev;
 
+	if (!(*stack) || !(*stack)->next)
+		return ;
+	tmp = *stack;
+	prev = NULL;
+	while (tmp->next)
+	{
+		prev = tmp;
+		tmp = tmp->next;
+	}
+	tmp->next = *stack;
+	prev->next = NULL;
+	*stack = tmp;	
+}
