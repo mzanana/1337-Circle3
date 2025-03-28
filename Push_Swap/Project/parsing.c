@@ -6,13 +6,13 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 21:23:24 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/27 19:55:39 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/03/28 00:49:38 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_error(char **str, t_stack *st)
+void ft_error(char **str, t_stack **st)
 {
     ft_putstr("Error\n");
     if (str)
@@ -67,7 +67,7 @@ int ft_atoi(char *str, char **split, t_stack *stack)
 		i++;
 	}
 	if ((ret * sign) > INT_MAX || (ret * sign) < INT_MIN)
-		ft_error(split, stack);
+		ft_error(split, &stack);
 	return ((int)(ret * sign));
 }
 t_stack	*ft_parsing(char **av, int ac)
@@ -81,14 +81,14 @@ t_stack	*ft_parsing(char **av, int ac)
 	while (i < ac)
 	{
 		if (!is_valid(av[i]))
-			ft_error(NULL, stack);
+			ft_error(NULL, &stack);
 		split = ft_split(av[i]);
 		j = 0;
 		while (split[j])
 		{
 			num = ft_atoi(split[j], split, stack);
 			if (!check_number(split[j]) || num_duplicate(stack, num))
-				ft_error(split, stack);
+				ft_error(split, &stack);
 			lst_addback(&stack, num);
 			j++;
 		}
