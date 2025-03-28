@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 02:45:05 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/27 22:02:22 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/03/28 00:58:59 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	check_number(char *str)
 		i++;
 	while (str[i])
 	{
-		if (str[i] <= '0' || str[i] >= '9')
+		if (str[i] < '0' || str[i] > '9')
 			return 0;
 		i++;
 	}
