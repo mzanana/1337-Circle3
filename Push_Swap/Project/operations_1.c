@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 16:40:58 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/28 21:02:53 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/03/28 21:49:26 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ void	ss(t_stack **sta, t_stack **stb)
 void    pa(t_stack **sta, t_stack **stb)
 {
 	write (1, "pa\n", 3);
-	ft_push(stb, sta);
+	ft_push(sta, stb);
 }
-void    pb(t_stack **sta, t_stack **stb)
+void    pb(t_stack **stb, t_stack **sta)
 {
 	write (1, "pb\n", 3);
-	ft_push(sta, stb);
+	ft_push(stb, sta);
 }
