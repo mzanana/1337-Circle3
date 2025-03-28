@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 04:02:49 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/28 00:47:14 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/03/28 03:24:59 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ typedef struct s_stack
 } t_stack;
 
 // operations_1 : sa, sb, ss, pa, pb.
-void    sa(t_stack **st);
-void    sb(t_stack **st);
-void    ss(t_stack **st1, t_stack **st2);
-void    pa(t_stack **st1, t_stack **st2);
-void    pb(t_stack **st1, t_stack **st2);
+void    sa(t_stack **stack);
+void    sb(t_stack **stack);
+void    ss(t_stack **sta, t_stack **stb);
+void    pa(t_stack **sta, t_stack **stb);
+void    pb(t_stack **sta, t_stack **stb);
 
 // operations_2 : ra, rb, rr.
 
