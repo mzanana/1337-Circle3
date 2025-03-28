@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 04:02:49 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/28 21:49:22 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/03/28 23:34:39 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,23 @@ typedef struct s_stack
     struct s_stack *next;
 } t_stack;
 
-// operations_1 : sa, sb, ss, pa, pb.
+// op_helpers : swap, push and rotate + rrr.
+void	ft_swap(t_stack **stack);
+void	ft_push(t_stack **sta, t_stack **stb);
+void	ft_rotate(t_stack **stack);
+
+// op_push_swap : sa, sb, ss, pa, pb.
 void    sa(t_stack **stack);
 void    sb(t_stack **stack);
 void	ss(t_stack **sta, t_stack **stb);
 void    pa(t_stack **sta, t_stack **stb);
 void    pb(t_stack **stb, t_stack **sta);
 
-// operations_2 : ra, rb, rr.
-void	ft_swap(t_stack **stack);
-void	ft_push(t_stack **sta, t_stack **stb);
+// op_rotate : ra, rb, rr, rra, rrb,.
+void    ra(t_stack **stack);
+void    rb(t_stack **stack);
+void	rr(t_stack **stack);
 
-// operations_3 : rra, rrb, rrr.
 
 // parsing.c
 t_stack*    ft_parsing(char **av, int ac);
