@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 16:41:40 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/28 23:53:44 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/03/29 00:19:14 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,11 @@ void	ft_reverse_rot(t_stack **stack)
 	tmp->next = *stack;
 	prev->next = NULL;
 	*stack = tmp;	
+}
+
+void	rrr(t_stack **sta, t_stack **stb)
+{
+	write (1, "rrr\n", 4);
+	rra(sta);
+	rrb(stb);
 }
