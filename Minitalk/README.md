@@ -32,4 +32,9 @@ For example `16 >> 1` become `4` and to visualize it on bits its : `00001000` ->
 </p>
 **Syntax :** `a >> b`   where,
 - **`a`** is the integer value to be shifted.
-- **`b`** specifies how many positions to shift the bits.
+- **`b`** specifies how many positions to shift the bits.  
+
+### Assignment using right and left shift
+
+Let's say that we have an integer `int x = 118`; and using just the same variable and with the shift operations change the value of `x` for example to `3`   
+`x = x >> 5` equivalent to `x >>= 5`  
