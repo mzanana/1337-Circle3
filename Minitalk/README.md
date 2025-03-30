@@ -30,3 +30,6 @@ For example `16 >> 1` become `4` and to visualize it on bits its : `00001000` ->
 <p align = "center">
 	<img src = "https://i.imgur.com/XFbPwRQ.png" width = "500">
 </p>
+**Syntax :** `a >> b`   where,
+- **`a`** is the integer value to be shifted.
+- **`b`** specifies how many positions to shift the bits.
