@@ -30,11 +30,32 @@ For example `16 >> 1` become `4` and to visualize it on bits its : `00001000` ->
 <p align = "center">
 	<img src = "https://i.imgur.com/XFbPwRQ.png" width = "500">
 </p>
+
 **Syntax :** `a >> b`   where,
 - **`a`** is the integer value to be shifted.
 - **`b`** specifies how many positions to shift the bits.  
 
-### Assignment using right and left shift
+### Assignment and Shifting
 
 Let's say that we have an integer `int x = 118`; and using just the same variable and with the shift operations change the value of `x` for example to `3`   
 `x = x >> 5` equivalent to `x >>= 5`  
+
+## Bitwise operators
+
+Before dive into the bitwise operators, they are like any other operator like addition, dividing and so on.   
+### AND operator & 
+The first thing that comes to your head is the **logical** AND operator &&, but when working with a single & we mean that we want the Bitwise operator   
+The best way understand something is to now how it works deeply. let's see the next example :  
+**what is `10 & 11` ??**  
+we need to think of the base 2 of those numbers   
+```
+let's say we work in just one byte, so 
+10 ======> 00001010
+11 ======> 00001011
+after checking the truth table we notice that only 1 & 1 which equal to 1, so :
+10 & 11 => 00001010 => 10
+```
+<p align = "center">
+	<img src = "https://i.imgur.com/gP3MQnV.png" width = "350">
+</p>
+
