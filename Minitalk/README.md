@@ -59,3 +59,10 @@ after checking the truth table we notice that only 1 & 1 which equal to 1, so :
 	<img src = "https://i.imgur.com/gP3MQnV.png" width = "350">
 </p>
 
+### Bitwise OR | 
+Similar to bitwise AND, only the truth table that changes 
+<p align = "center">
+	<img src = "https://i.imgur.com/x7m1Xb1.png" width = "350">
+</p>
+
+	
