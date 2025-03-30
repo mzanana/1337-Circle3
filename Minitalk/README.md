@@ -23,3 +23,10 @@ int main() {
 ```
 
 The right shifting help us to multiply the number given by `2^n`, in our example we shift 21 by 1 so the result gonna be `21 * (2^1) = 21 * 2 = 42`  and this method is much faster than the normal multiplication.     
+### Right shift
+
+Right shifting is the opposite of the left shifting, instead of multiplying the input the right shifting divide the input by 2.  
+For example `16 >> 1` become `4` and to visualize it on bits its : `00001000` -> `00000100` so our input `16` became `4`    
+<p align = "center">
+	<img src = "https://i.imgur.com/XFbPwRQ.png" width = "500">
+</p>
