@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 21:23:24 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/28 00:49:38 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/03/31 12:17:56 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void ft_error(char **str, t_stack **st)
 {
-    ft_putstr("Error\n");
+    write(2, "Error\n", 6);
     if (str)
         free_split(str);
     if (st)
@@ -64,10 +64,10 @@ int ft_atoi(char *str, char **split, t_stack *stack)
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
 		ret = ret * 10 + (str[i] - '0');
+		if ((ret * sign) > INT_MAX || (ret * sign) < INT_MIN)
+			ft_error(split, &stack);
 		i++;
 	}
-	if ((ret * sign) > INT_MAX || (ret * sign) < INT_MIN)
-		ft_error(split, &stack);
 	return ((int)(ret * sign));
 }
 t_stack	*ft_parsing(char **av, int ac)
