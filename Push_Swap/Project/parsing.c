@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 21:23:24 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/31 13:09:58 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/04 01:42:14 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ t_stack	*ft_parsing(char **av, int ac)
 		if (!is_valid(av[i]))
 			ft_error(NULL, &stack);
 		split = ft_split(av[i]);
-		if (!split[0])
+		if (!split)
 			ft_error(NULL, &stack);
 		j = 0;
 		while (split[j])
