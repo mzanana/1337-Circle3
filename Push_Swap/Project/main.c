@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 04:02:43 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/29 00:13:36 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/04 01:35:21 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ int main(int ac, char **av)
     if (!sta)
         ft_error(NULL, NULL);
     if (is_sorted(sta))
-        (free_stack(&sta), exit(0));
-    size = ft_size(sta);
+         return (free_stack(&sta), 0);
+    size = lst_size(sta);
     ft_sort(&sta, &stb, size);
-    free_stack(sta);
+    free_stack(&sta);
 }
 
 
