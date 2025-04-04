@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 01:17:24 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/27 17:54:53 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/04 01:31:22 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,8 @@ char **ft_split(char *str)
 	if (!str)
 		return (NULL);
 	ret = malloc (sizeof(char*) * (ft_countword(str) + 1));
-	if (!ret)
-		return (NULL);
+	if (!ret || ft_countword(str) == 0)	
+		return (free(ret), NULL);
 	i = 0;
 	jump_spaces(str, &i);
 	j = 0;
