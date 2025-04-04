@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 01:53:45 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/04 21:37:21 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/04 21:39:17 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int		min_pos(t_stack *st)
 	return pos;
 }
 
-
 void    easy_sorting(t_stack **sta, t_stack **stb)
 {
 	int (a_size), (pos);
@@ -45,5 +44,15 @@ void    easy_sorting(t_stack **sta, t_stack **stb)
 	while (a_size > 3)
 	{
 		pos = min_pos(sta);
+		if (pos <= (a_size/2))
+		{
+			while (pos-- > 0)
+				ra(sta);
+		}
+		else
+			while (pos++ < a_size)
+				rra(sta);
+		a_size--;
 	}
 }
+
