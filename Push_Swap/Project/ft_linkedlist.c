@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 19:56:47 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/28 20:45:02 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/03 22:57:22 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,18 @@ void	free_stack(t_stack **head)
 		free((*head));
 		(*head) = tmp;
 	}
+}
+
+int     is_sorted(t_stack *stack)
+{
+	if (!stack || !stack->next)
+		return 1;
+
+	while (stack->next)
+	{
+		if (stack->data > stack->next->data)
+			return 0;
+		stack = stack->next;		
+	}
+	return 1;
 }
