@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 04:02:49 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/03 22:47:16 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/04 21:30:14 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ void    pb(t_stack **stb, t_stack **sta);
 void    ra(t_stack **stack);
 void    rb(t_stack **stack);
 void	rr(t_stack **sta, t_stack **stb);
-
+void	rra(t_stack **stack);
+void	rrb(t_stack **stack);
 
 // parsing.c
 t_stack*    ft_parsing(char **av, int ac);
@@ -67,4 +68,7 @@ void	lst_addback(t_stack **head, int num);
 void	free_stack(t_stack **head);
 int     lst_size(t_stack *stack);
 int     is_sorted(t_stack *stack);
+// sorting.c
+void    easy_sorting(t_stack **sta, t_stack **stb);
+int		min_pos(t_stack *st);
 #endif
