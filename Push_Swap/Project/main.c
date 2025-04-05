@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 04:02:43 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/05 00:48:25 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/05 02:48:52 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,9 @@ int main(int ac, char **av)
     size = lst_size(sta);
     if (size <= 10)
         easy_sorting(&sta, &stb);
+    else
+        chunks_sorting(&sta, &stb);
     free_stack(&sta);
-    
 }
 
 
