@@ -6,52 +6,52 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 21:23:24 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/04 20:02:27 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/05 23:57:15 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_error(char **str, t_stack **st)
+void	ft_error(char	**str, t_stack	**st)
 {
-    write(2, "Error\n", 6);
-    if (str)
-        free_split(str);
-    if (st)
-        free_stack(st);
-    exit (1);
+	write(2, "Error\n", 6);
+	if (str)
+		free_split(str);
+	if (st)
+		free_stack(st);
+	exit (1);
 }
 
 int	is_num(char c)
 {
 	if ((c >= '0' && c <= '9') || c == '-' || c == '+' || c == ' ')
-		return 1;
+		return (1);
 	else
-		return 0;
+		return (0);
 }
 
-int is_valid(char *str)
+int	is_valid(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
 	{
 		if (!is_num(str[i]))
-			return 0;
+			return (0);
 		i++;
 	}
-	return 1;
+	return (1);
 }
 
-int ft_atoi(char *str, char **split, t_stack *stack)
+int	ft_atoi(char *str, char **split, t_stack *stack)
 {
-	long ret;
-	int i;
-	int sign;
+	long	ret;
+	int		i;
+	int		sign;
 
 	if (!str)
-		return 0;
+		return (0);
 	i = 0;
 	sign = 1;
 	if (str[i] == '+' || str[i] == '-')
@@ -70,12 +70,13 @@ int ft_atoi(char *str, char **split, t_stack *stack)
 	}
 	return ((int)(ret * sign));
 }
+
 t_stack	*ft_parsing(char **av, int ac)
 {
-	t_stack *stack;
-	char 	**split;
-	int		(i), (j), (num);
-	
+	t_stack	*stack;
+	char	**split;
+
+	int (i), (j), (num);
 	stack = NULL;
 	i = 1;
 	while (i < ac)
