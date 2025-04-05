@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 01:04:00 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/05 04:03:08 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/05 19:51:27 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,15 +84,15 @@ void    chunks_sorting(t_stack **sta, t_stack **stb)
 {
 	int	(min), (max), (size), (holder);
 	int	*arr;
-
 	arr = fill_arr(*sta);
 	size = lst_size(*sta);
 	holder = size;
-	if (size >= 100)
+	if (size > 100)
 		max = size / 13;
 	else
 		max = size / 6;
-	while (holder)
+	min = 0;
+	while (holder > 0)
 	{
 		push_to_stb(sta, stb, arr[min], arr[max]);
 		if (min < max)
@@ -101,5 +101,6 @@ void    chunks_sorting(t_stack **sta, t_stack **stb)
 			max++;
 		holder--;
 	}
-	// push_back_sta(sta, stb);
+	push_back_sta(sta, stb);
+	free(arr);
 }
