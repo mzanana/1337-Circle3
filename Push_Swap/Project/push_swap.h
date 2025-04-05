@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 04:02:49 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/04 21:30:14 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/04 21:41:21 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	ft_swap(t_stack **stack);
 void	ft_push(t_stack **sta, t_stack **stb);
 void	ft_rotate(t_stack **stack);
 void	ft_reverse_rot(t_stack **stack);
+void	rrr(t_stack **sta, t_stack **stb);
 
 // op_push_swap : sa, sb, ss, pa, pb.
 void    sa(t_stack **stack);
