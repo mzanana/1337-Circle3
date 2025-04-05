@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 16:41:40 by mzanana           #+#    #+#             */
-/*   Updated: 2025/03/29 00:19:14 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/05 19:19:17 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_rotate(t_stack **stack)
 	t_stack *holder;
 	t_stack	*current;
 
-	if (!(*stack))
+	if (!(*stack) || !(*stack)->next)
 		return ;
 	holder = *stack;
 	*stack = holder->next;
