@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 19:56:47 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/03 22:57:22 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/04 22:03:43 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,16 @@ void	lst_addback(t_stack **head, int num)
 int     lst_size(t_stack *stack)
 {
 	int	ret;
-
+	t_stack *tmp;
+	
 	if (!stack)
 		return 0;
+	tmp =  stack;
 	ret = 0;
-	while (stack)
+	while (tmp)
 	{
 		ret++;
-		stack = stack->next;
+		tmp = tmp->next;
 	}
 	return ret;
 }
