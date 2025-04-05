@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 04:02:49 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/05 03:21:00 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/05 05:16:27 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,5 @@ int		min_pos(t_stack *st);
 void    chunks_sorting(t_stack **sta, t_stack **stb);
 void 	sort_arr(int *arr, int size);
 int		*fill_arr(t_stack *sta);
+void    push_back_sta(t_stack **sta, t_stack **stb);
 #endif
