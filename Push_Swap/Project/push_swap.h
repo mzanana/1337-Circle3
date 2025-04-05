@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 04:02:49 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/04 21:41:21 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/05 03:21:00 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,12 @@ void	lst_addback(t_stack **head, int num);
 void	free_stack(t_stack **head);
 int     lst_size(t_stack *stack);
 int     is_sorted(t_stack *stack);
-// sorting.c
+// easy_sorting.c
 void    easy_sorting(t_stack **sta, t_stack **stb);
+void	three_sort(t_stack **st);
 int		min_pos(t_stack *st);
+// chunks_sorting.c
+void    chunks_sorting(t_stack **sta, t_stack **stb);
+void 	sort_arr(int *arr, int size);
+int		*fill_arr(t_stack *sta);
 #endif
