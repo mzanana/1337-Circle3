@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 16:41:40 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/05 19:19:17 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/06 00:25:51 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_swap(t_stack **stack)
 {
-	t_stack *tmp;
-	
+	t_stack	*tmp;
+
 	if (!stack || !(*stack) || !(*stack)->next)
 		return ;
 	tmp = *stack;
@@ -26,18 +26,19 @@ void	ft_swap(t_stack **stack)
 
 void	ft_push(t_stack **sta, t_stack **stb)
 {
-	t_stack *tmp;
-	
+	t_stack	*tmp;
+
 	if (!(*stb))
 		return ;
 	tmp = (*stb)->next;
 	(*stb)->next = *sta;
 	*sta = *stb;
-	*stb = tmp;	
+	*stb = tmp;
 }
+
 void	ft_rotate(t_stack **stack)
 {
-	t_stack *holder;
+	t_stack	*holder;
 	t_stack	*current;
 
 	if (!(*stack) || !(*stack)->next)
@@ -50,10 +51,11 @@ void	ft_rotate(t_stack **stack)
 	current->next = holder;
 	holder->next = NULL;
 }
+
 void	ft_reverse_rot(t_stack **stack)
 {
-	t_stack *tmp;
-	t_stack *prev;
+	t_stack	*tmp;
+	t_stack	*prev;
 
 	if (!(*stack) || !(*stack)->next)
 		return ;
@@ -66,7 +68,7 @@ void	ft_reverse_rot(t_stack **stack)
 	}
 	tmp->next = *stack;
 	prev->next = NULL;
-	*stack = tmp;	
+	*stack = tmp;
 }
 
 void	rrr(t_stack **sta, t_stack **stb)
