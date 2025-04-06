@@ -6,17 +6,17 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 01:17:24 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/04 01:42:07 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/06 00:20:01 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_countword(char *str)
+int	ft_countword(char *str)
 {
-	int i;
-	int ret;
-	int flag;
+	int	i;
+	int	ret;
+	int	flag;
 
 	i = 0;
 	while (str[i] && str[i] == ' ')
@@ -36,12 +36,12 @@ int ft_countword(char *str)
 			flag = 0;
 		i++;
 	}
-	return ret;
+	return (ret);
 }
 
-int ft_stringlen(char *str, int start)
+int	ft_stringlen(char *str, int start)
 {
-	int ret;
+	int	ret;
 
 	ret = 0;
 	while (str[start] && str[start] != ' ')
@@ -49,22 +49,22 @@ int ft_stringlen(char *str, int start)
 		start++;
 		ret++;
 	}
-	return ret;
+	return (ret);
 }
 
-void free_split(char **str)
+void	free_split(char **str)
 {
-    int i;
+	int	i;
 
-    i = 0;
+	i = 0;
 	while (str[i])
 		free(str[i++]);
 	free(str);
 }
 
-void jump_spaces(char *str, int *i)
+void	jump_spaces(char *str, int *i)
 {
-	int k;
+	int	k;
 
 	k = *i;
 	while (str[k] && str[k] == ' ')
@@ -74,16 +74,16 @@ void jump_spaces(char *str, int *i)
 	}
 }
 
-char **ft_split(char *str)
+char	**ft_split(char *str)
 {
-	int		(i), (j), (k);
 	char	**ret;
-	
+
+	int (i), (j), (k);
 	if (!str)
 		return (NULL);
-	ret = malloc (sizeof(char*) * (ft_countword(str) + 1));
-	if (!ret || ft_countword(str) == 0)	
-		return (free(ret), NULL);
+	ret = malloc (sizeof (char *) * (ft_countword (str) + 1));
+	if (!ret || ft_countword (str) == 0)
+		return (free (ret), NULL);
 	i = 0;
 	jump_spaces(str, &i);
 	j = 0;
@@ -100,5 +100,5 @@ char **ft_split(char *str)
 		j++;
 	}
 	ret[j] = 0;
-	return ret;
+	return (ret);
 }
