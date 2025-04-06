@@ -6,11 +6,55 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 05:23:50 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/06 06:00:44 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/06 06:01:22 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] && s2[i])
+	{
+		if (s1[i] == s2[i])
+			i++;
+		else
+			return (s1[i] - s2[i]);
+	}
+	return (s1[i] - s2[i]);
+}
+
+int	execute(char *oper, t_stack **sta, t_stack **stb)
+{
+	if (!ft_strcmp(oper, "sa\n"))
+		sa(sta);
+	else if (!ft_strcmp(oper, "sb\n"))
+		sb(stb);
+	else if (!ft_strcmp(oper, "ss\n"))
+		ss(sta, stb);
+	else if (!ft_strcmp(oper, "pa\n"))
+		pa(sta, stb);
+	else if (!ft_strcmp(oper, "pb\n"))
+		pb(sta, stb);
+	else if (!ft_strcmp(oper, "ra\n"))
+		ra(sta);
+	else if (!ft_strcmp(oper, "rb\n"))
+		rb(stb);
+	else if (!ft_strcmp(oper, "rr\n"))
+		rr(sta, stb);
+	else if (!ft_strcmp(oper, "rra\n"))
+		rra(sta);
+	else if (!ft_strcmp(oper, "rrb\n"))
+		rrb(stb);
+	else if (!ft_strcmp(oper, "rrr\n"))
+		rrr(sta, stb);
+	else
+		return (0);
+	return (1);
+}
 
 void	apply_oper(t_stack **sta, t_stack **stb)
 {
