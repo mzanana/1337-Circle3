@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/20 04:02:49 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/05 23:47:16 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/06 06:28:19 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ int		ft_stringlen(char *str, int start);
 int		ft_countword(char *str);
 
 // helpers1.c
-void	ft_putstr(char *str);
 int		ft_strlen(char *str);
 int		num_duplicate(t_stack *stack, int num);
 int		check_number(char *str);

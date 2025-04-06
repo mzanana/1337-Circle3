@@ -6,12 +6,11 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 06:27:03 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/06 06:28:07 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/06 06:30:14 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
-
 
 int	ft_strcmp(char *s1, char *s2)
 {

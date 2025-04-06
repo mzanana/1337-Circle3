@@ -6,12 +6,11 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/28 16:40:58 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/06 00:26:45 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/06 06:53:14 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-// sa, sb, ss, pa, pb.
 
 void	sa(t_stack **stack)
 {

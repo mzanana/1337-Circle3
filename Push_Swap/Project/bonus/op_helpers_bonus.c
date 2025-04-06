@@ -6,11 +6,12 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 06:08:29 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/06 06:11:36 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/06 06:27:41 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
+
 
 void	ft_swap(t_stack **stack)
 {
