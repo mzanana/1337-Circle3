@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 21:11:40 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/05 21:12:12 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/06 00:13:52 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@
 void	three_sort(t_stack **st)
 {
 	int (f), (s), (t);
-	
 	f = (*st)->data;
 	s = (*st)->next->data;
 	t = (*st)->next->next->data;
-	
 	if (f > s && f > t)
 		ra(st);
 	if (s > f && s > t)
@@ -28,12 +26,11 @@ void	three_sort(t_stack **st)
 		sa(st);
 }
 
-int		min_pos(t_stack *st)
+int	min_pos(t_stack *st)
 {
-	int pos, i, min;
-	t_stack *tmp;
+	t_stack	*tmp;
 
-	
+	int (pos), (i), (min);
 	min = st->data;
 	tmp = st;
 	i = 0;
@@ -48,15 +45,13 @@ int		min_pos(t_stack *st)
 		tmp = tmp->next;
 		i++;
 	}
-	return pos;
-	
+	return (pos);
 }
 
-void    easy_sorting(t_stack **sta, t_stack **stb)
+void	easy_sorting(t_stack **sta, t_stack **stb)
 {
 	int (a_size), (pos), (b_size);
-	
-	a_size = lst_size(*sta); 
+	a_size = lst_size(*sta);
 	if (a_size == 2)
 	{
 		sa(sta);
@@ -79,4 +74,3 @@ void    easy_sorting(t_stack **sta, t_stack **stb)
 	while (b_size-- > 0)
 		pa(sta, stb);
 }
-
