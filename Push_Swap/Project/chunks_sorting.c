@@ -6,16 +6,15 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 01:04:00 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/05 19:51:27 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/06 00:10:28 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void 	sort_arr(int *arr, int size)
+void	sort_arr(int	*arr, int size)
 {
-	int i, swap, j;
-
+	int (i), (swap), (j);
 	i = 0;
 	while (i < size)
 	{
@@ -34,16 +33,16 @@ void 	sort_arr(int *arr, int size)
 	}
 }
 
-int		*fill_arr(t_stack *sta)
+int	*fill_arr(t_stack *sta)
 {
-	int *ret;
-	int i, size;
-	t_stack *tmp;
+	int		*ret;
+	t_stack	*tmp;
 
+	int (i), (size);
 	size = lst_size(sta);
 	ret = malloc (sizeof(int) * size);
 	if (!ret)
-		return NULL;
+		return (NULL);
 	tmp = sta;
 	i = 0;
 	while (tmp)
@@ -52,12 +51,12 @@ int		*fill_arr(t_stack *sta)
 		tmp = tmp->next;
 	}
 	sort_arr(ret, size);
-	return ret;
+	return (ret);
 }
 
-void 	push_to_stb(t_stack **sta, t_stack **stb, int min, int max)
+void	push_to_stb(t_stack **sta, t_stack **stb, int min, int max)
 {
-	int b_size;
+	int	b_size;
 
 	b_size = lst_size(*stb);
 	if (!*sta)
@@ -80,10 +79,12 @@ void 	push_to_stb(t_stack **sta, t_stack **stb, int min, int max)
 		ra(sta);
 	}
 }
-void    chunks_sorting(t_stack **sta, t_stack **stb)
+
+void	chunks_sorting(t_stack **sta, t_stack **stb)
 {
-	int	(min), (max), (size), (holder);
 	int	*arr;
+
+	int (min), (max), (size), (holder);
 	arr = fill_arr(*sta);
 	size = lst_size(*sta);
 	holder = size;
