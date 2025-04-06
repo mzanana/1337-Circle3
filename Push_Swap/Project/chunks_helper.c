@@ -6,17 +6,17 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 04:17:44 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/05 06:06:55 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/06 00:06:34 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int 	max_pos(t_stack *stb)
+int	max_pos(t_stack *stb)
 {
-	int pos, i, max;
-	t_stack *tmp;
+	t_stack	*tmp;
 
+	int (pos), (i), (max);
 	i = 0;
 	pos = 0;
 	tmp = stb;
@@ -31,12 +31,12 @@ int 	max_pos(t_stack *stb)
 		i++;
 		tmp = tmp->next;
 	}
-	return pos;
+	return (pos);
 }
-void 	push_back_sta(t_stack **sta, t_stack **stb)
-{
-	int pos, b_size;
 
+void	push_back_sta(t_stack	**sta, t_stack	**stb)
+{
+	int (pos), (b_size);
 	b_size = lst_size(*stb);
 	while (b_size > 0)
 	{
