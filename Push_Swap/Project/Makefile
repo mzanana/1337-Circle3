@@ -22,7 +22,10 @@ $(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
 $(CHECKER): $(OBJB)
-	$(CC) $(CFLAGS) $(OBJB) -o $(CHECKER)
+	$(CC) $(FLAGS) $(OBJB) -o $(CHECKER)
+
+%.o: %.c
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ) $(OBJB) 
@@ -31,7 +34,5 @@ fclean: clean
 	rm -f $(NAME) $(CHECKER)
 
 re: fclean all
-
-.SECONDARY: $(OBJ) $(OBJB)
 
 .PHONY: all clean fclean re bonus
