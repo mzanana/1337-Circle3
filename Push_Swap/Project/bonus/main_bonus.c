@@ -6,12 +6,11 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 03:28:42 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/07 03:28:49 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/07 04:04:50 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
-
 
 int	ft_strcmp(char *s1, char *s2)
 {
@@ -28,36 +27,36 @@ int	ft_strcmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
-int	execute_instruction(char *cmd, t_stack **stack_a, t_stack **stack_b)
+int	operation(char *line, t_stack **sta, t_stack **stb)
 {
-	if (!ft_strcmp(cmd, "sa\n"))
-		sa(stack_a);
-	else if (!ft_strcmp(cmd, "sb\n"))
-		sb(stack_b);
-	else if (!ft_strcmp(cmd, "ss\n"))
-		ss(stack_a, stack_b);
-	else if (!ft_strcmp(cmd, "pa\n"))
-		pa(stack_a, stack_b);
-	else if (!ft_strcmp(cmd, "pb\n"))
-		pb(stack_b, stack_a);
-	else if (!ft_strcmp(cmd, "ra\n"))
-		ra(stack_a);
-	else if (!ft_strcmp(cmd, "rb\n"))
-		rb(stack_b);
-	else if (!ft_strcmp(cmd, "rr\n"))
-		rr(stack_a, stack_b);
-	else if (!ft_strcmp(cmd, "rra\n"))
-		rra(stack_a);
-	else if (!ft_strcmp(cmd, "rrb\n"))
-		rrb(stack_b);
-	else if (!ft_strcmp(cmd, "rrr\n"))
-		rrr(stack_a, stack_b);
+	if (!ft_strcmp(line, "sa\n"))
+		sa(sta);
+	else if (!ft_strcmp(line, "sb\n"))
+		sb(stb);
+	else if (!ft_strcmp(line, "ss\n"))
+		ss(sta, stb);
+	else if (!ft_strcmp(line, "pa\n"))
+		pa(sta, stb);
+	else if (!ft_strcmp(line, "pb\n"))
+		pb(stb, sta);
+	else if (!ft_strcmp(line, "ra\n"))
+		ra(sta);
+	else if (!ft_strcmp(line, "rb\n"))
+		rb(stb);
+	else if (!ft_strcmp(line, "rr\n"))
+		rr(sta, stb);
+	else if (!ft_strcmp(line, "rra\n"))
+		rra(sta);
+	else if (!ft_strcmp(line, "rrb\n"))
+		rrb(stb);
+	else if (!ft_strcmp(line, "rrr\n"))
+		rrr(sta, stb);
 	else
 		return (0);
 	return (1);
 }
 
-void	ft_check_moves(char *line, t_stack **sta, t_stack **stb)
+void	check_line(char *line, t_stack **sta, t_stack **stb)
 {
 	if (!line)
 		return ;
@@ -77,7 +76,7 @@ int	main(int ac, char **av)
 	t_stack		*sta;
 	t_stack		*stb;
 	char		*line;
-	
+
 	if (ac < 2)
 		return (0);
 	stb = NULL;
@@ -87,7 +86,7 @@ int	main(int ac, char **av)
 	while (1)
 	{
 		line = get_next_line(0);
-		ft_check_moves(line, &sta, &stb);
+		check_line(line, &sta, &stb);
 		if (!line)
 			break ;
 	}
