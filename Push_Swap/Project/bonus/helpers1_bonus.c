@@ -5,27 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/06 06:27:03 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/06 06:30:14 by mzanana          ###   ########.fr       */
+/*   Created: 2025/04/07 03:30:23 by mzanana           #+#    #+#             */
+/*   Updated: 2025/04/07 03:30:29 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "checker_bonus.h"
 
-int	ft_strcmp(char *s1, char *s2)
-{
-	int	i;
-
-	i = 0;
-	while (s1[i] && s2[i])
-	{
-		if (s1[i] == s2[i])
-			i++;
-		else
-			return (s1[i] - s2[i]);
-	}
-	return (s1[i] - s2[i]);
-}
 
 int	ft_strlen(char *str)
 {
