@@ -6,12 +6,11 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 02:45:05 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/06 06:28:15 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/07 03:56:49 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 int	ft_strlen(char *str)
 {
