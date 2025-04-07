@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/06 05:24:08 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/06 06:47:55 by mzanana          ###   ########.fr       */
+/*   Created: 2025/04/07 03:24:43 by mzanana           #+#    #+#             */
+/*   Updated: 2025/04/07 03:25:20 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef CHECKER_BONUS_H
 # define CHECKER_BONUS_H
