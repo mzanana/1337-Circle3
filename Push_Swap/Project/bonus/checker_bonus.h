@@ -6,10 +6,9 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 03:24:43 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/07 03:25:20 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/07 04:06:20 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef CHECKER_BONUS_H
 # define CHECKER_BONUS_H
@@ -21,7 +20,6 @@
 # include <limits.h> // int_max int_min
 # include <unistd.h> // write
 
-
 typedef struct s_stack
 {
 	int					data;
@@ -29,9 +27,9 @@ typedef struct s_stack
 }	t_stack;
 
 // main_bonus.c 
-void	apply_oper(t_stack **sta, t_stack **stb);
-int		execute(char *oper, t_stack **sta, t_stack **stb);
-void	result(t_stack *stack_a, t_stack *stack_b);
+int		ft_strcmp(char *s1, char *s2);
+void	check_line(char *line, t_stack **sta, t_stack **stb);
+int		operation(char *line, t_stack **sta, t_stack **stb);
 
 // op_helpers_bonus.c : swap, push and rotate + rrr.
 void	ft_swap(t_stack **stack);
@@ -72,7 +70,6 @@ int		ft_countword(char *str);
 int		ft_strlen(char *str);
 int		num_duplicate(t_stack *stack, int num);
 int		check_number(char *str);
-int		ft_strcmp(char *s1, char *s2);
 
 // ft_linkedlist_bonus.c
 void	lst_addback(t_stack **head, int num);
