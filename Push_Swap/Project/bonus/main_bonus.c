@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 03:28:42 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/07 04:04:50 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/07 04:10:03 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	check_line(char *line, t_stack **sta, t_stack **stb)
 {
 	if (!line)
 		return ;
-	if (!execute_instruction(line, sta, stb))
+	if (!operation(line, sta, stb))
 	{
 		write(2, "Error\n", 6);
 		free(line);
