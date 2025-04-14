@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 20:34:55 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/14 21:31:37 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/14 21:39:22 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,17 @@ void	ft_send (char c, int pid)
 			if (kill (pid, SIGUSR1) == -1)
 				exit (1);
 		}
+		while (flag)
+			usleep (10);
 		bit--;
 	}
+}
+
+void	ft_reset (int signum)
+{
+	(void)signum;
+	flag = 0;
+	return ;
 }
 
 int main (int ac, char **av)
@@ -51,6 +60,7 @@ int main (int ac, char **av)
 	s_pid = ft_atoi (av[1]);
 	if (!s_pid)
 		return (1);
+	signal (SIGUSR1, ft_reset);
 	i = 0;
 	while (av[2][i])
 		ft_send(av[2][i++], s_pid);

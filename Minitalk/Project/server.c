@@ -6,15 +6,15 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 12:53:01 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/14 20:33:39 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/14 21:38:43 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-pid_t client_pid = 0;
+pid_t	g_old_pid = 0;
 
-void	ft_header()
+void	ft_header(void)
 {
 	ft_putstr ("My Process ID is : ");
 	ft_putnbr (getpid ());
@@ -25,15 +25,15 @@ void	handler(int signum, siginfo_t *info, void *context)
 {
 	static char	c = 0;
 	static int	bit = 7;
-	pid_t		pid_sender;
+	pid_t		current_pid;
 
 	(void)context;
-	if (client_pid != pid_sender)
+	if (g_old_pid != current_pid)
 	{
 		c = 0;
 		bit = 7;
 	}
-	client_pid = pid_sender;
+	g_old_pid = current_pid;
 	if (signum == SIGUSR2)
 		c = c | (1 << bit);
 	if (bit == 0)
@@ -43,12 +43,13 @@ void	handler(int signum, siginfo_t *info, void *context)
 		bit = 8;
 	}
 	bit--;
+	kill (g_old_pid, SIGUSR1);
 }
 
-int	main()
+int	main(void)
 {
 	struct sigaction	sig;
-	
+
 	ft_header();
 	sig.sa_sigaction = &handler;
 	sig.sa_flags = SA_SIGINFO;
