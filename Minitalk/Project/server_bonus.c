@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 12:53:01 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/15 10:40:32 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/15 15:35:55 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int	main(int ac, char **av)
 		return (1);
 	ft_header();
 	sig.sa_sigaction = &handler;
+	sigemptyset(&sig.sa_mask);
 	sig.sa_flags = SA_SIGINFO;
 	sigaction (SIGUSR1, &sig, NULL);
 	sigaction (SIGUSR2, &sig, NULL);
