@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 12:53:01 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/14 21:50:39 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/15 10:26:04 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	handler(int signum, siginfo_t *info, void *context)
 	kill (g_old_pid, SIGUSR1);
 }
 
-int	main(int ac, char *av)
+int	main(int ac, char **av)
 {
 	struct sigaction	sig;
 
