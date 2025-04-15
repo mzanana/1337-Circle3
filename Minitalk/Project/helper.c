@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 12:56:53 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/14 21:14:29 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/15 10:43:55 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_atoi(char *str)
 
 void	ft_putstr(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -42,8 +42,8 @@ void	ft_putstr(char *str)
 
 void	ft_putnbr(int n)
 {
-	char c;
-	
+	char	c;
+
 	if (n == -2147483648)
 	{
 		write (1, "-2147483648", 11);
