@@ -65,4 +65,67 @@ Similar to bitwise AND, only the truth table that changes
 	<img src = "https://i.imgur.com/x7m1Xb1.png" width = "350">
 </p>
 
-	
+
+
+
+
+To send a signal to another process we use the function `kill` declared on the `signal.h` library,  for example `kill(pid, SIGKILL);` here we send a kill signal to the `pid` process   
+
+How can we change the behavior of a signal ???  
+we have to use a **struct** named `struct sigaction sa` that is inside the `string.h` library    
+And inside the sigaction we can tell it how to handle the signals 
+
+Inside the sigaction a function we can tell it how to **handle** the signal , so we gonna set up the function that is going to be called whenever we receive a certain signal and its a **pointer to a function**. so we pass the reference to the function we wanna  use,  
+
+and then we need to hook our sigaction to the proper signal, and here where we gonna use the `sigaction()` which take the signal integer and then a reference to  our variable to store data needed and last parameter is for backup the old sigaction if any previous is already been 
+
+```C
+#include <signal.h>
+
+void handlesig(int sig)
+{
+	 ...
+}
+
+int main ()
+{
+	struct sigaction sa;
+
+	sa.sa_handler = &handlesig;
+	sigaction(SIGTSTP, &sa, NULL);
+}
+```
+
+So in our case whenever we press the `Ctr Z` which use the stop signal it gonna apply whatever there is in the `handlesig` function 
+
+## Sigaction function 
+
+```C
+int sigaction( int sig,
+               const struct sigaction * act,
+               struct sigaction * oact);
+```
+
++ `sig` : the integer of the signal we want to call ;  
++ `act` : Pointer to a struct `sigaction` that contain information about handling the new signal if the original one would be modified;  
++ `oact` : Like a back-up of the current struct sigaction that contain the current signal  information;  
+
+**Return values**  
++ `0` when success;  
++ `1` if it fails;  
+
+the sigaction function tells the system if the sig signal is occured run the function i wrote 
+## Sigaction Struct :
+This is the struct that hold all the information about how to handle the signal 
+
+```C
+struct sigaction {
+    void (*sa_handler)(int);         // Function to call when signal is received
+    void (*sa_sigaction)(int, siginfo_t *, void *); // Used with SA_SIGINFO flag
+    sigset_t sa_mask;                // Signals to block while handler runs
+    int sa_flags;                    // Flags to control behavior
+    void (*sa_restorer)(void);       // (Obsolete)
+}; 
+```
+
+First of all we need to use the flags so the system know if the signal gonna work with the sa_handler function or the sa_sigaction function 
