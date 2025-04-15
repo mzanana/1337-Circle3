@@ -6,7 +6,7 @@
 /*   By: mzanana <mzanana@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 12:56:53 by mzanana           #+#    #+#             */
-/*   Updated: 2025/04/15 16:00:20 by mzanana          ###   ########.fr       */
+/*   Updated: 2025/04/15 16:07:23 by mzanana          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	ft_atoi(char *str)
 		return (0);
 	i = 0;
 	while (str[i] && (str[i] == ' ' || str[i] == '\t'))
+		i++;
+	if (str[i] && str[i] == '+')
 		i++;
 	ret = 0;
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
